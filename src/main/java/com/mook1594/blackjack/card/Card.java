@@ -17,6 +17,7 @@ public class Card {
     }
 
     public String getDenomination() {
-        return null;
+
+        return Integer.toString(number);
     }
 }
