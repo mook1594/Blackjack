@@ -20,6 +20,9 @@ public class Card {
         if (number == 1) {
             return "A";
         }
+        if (number == 11) {
+            return "J";
+        }
         return Integer.toString(number);
     }
 }
