@@ -3,6 +3,8 @@ package com.mook1594.blackjack.card;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
+
 public class Card {
     private int number;
 
@@ -37,5 +39,19 @@ public class Card {
             return "K";
         }
         return Integer.toString(number);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Card)) return false;
+        Card card = (Card) o;
+        return number == card.number &&
+                pattern == card.pattern;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, pattern);
     }
 }

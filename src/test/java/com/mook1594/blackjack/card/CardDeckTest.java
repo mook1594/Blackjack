@@ -33,4 +33,5 @@ public class CardDeckTest {
             assertThat(cards.contains(new Card(i, CardType.SPADE))).isEqualTo(true);
         }
     }
+
 }
