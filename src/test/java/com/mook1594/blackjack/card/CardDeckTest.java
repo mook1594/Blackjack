@@ -17,4 +17,18 @@ public class CardDeckTest {
 
         assertThat(cards.size()).isEqualTo(52);
     }
+
+    @Test
+    @DisplayName("카드 검증")
+    public void createCardDeck1() {
+        CardDeck deck = new CardDeck();
+        List<Card> cards = deck.makeCard();
+
+        for (int i = 1; i <= 13; i++) {
+            assertThat(cards.contains(new Card(i, CardType.DIAMOND))).isEqualTo(true);
+            assertThat(cards.contains(new Card(i, CardType.HEART))).isEqualTo(true);
+            assertThat(cards.contains(new Card(i, CardType.CLUB))).isEqualTo(true);
+            assertThat(cards.contains(new Card(i, CardType.SPADE))).isEqualTo(true);
+        }
+    }
 }
