@@ -11,6 +11,9 @@ public class Card {
     private CardType pattern;
 
     public Card(int i, CardType cardType) {
+        if (1 > i || i > 13) {
+            throw new IllegalArgumentException("카드 숫자가 올바르지 않습니다.");
+        }
         this.number = i;
 
         this.pattern = cardType;
