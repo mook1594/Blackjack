@@ -13,7 +13,8 @@ public class CardDeckTest {
     @DisplayName("카드 뭉치를 만든다.")
     public void createCardDeck() {
         CardDeck deck = new CardDeck();
-        List<Card> cards = deck.makeCard();
+        deck.makeCard();
+        List<Card> cards = deck.getCards();
 
         assertThat(cards.size()).isEqualTo(52);
     }
@@ -22,7 +23,8 @@ public class CardDeckTest {
     @DisplayName("카드 검증")
     public void createCardDeck1() {
         CardDeck deck = new CardDeck();
-        List<Card> cards = deck.makeCard();
+        deck.makeCard();
+        List<Card> cards = deck.getCards();
 
         for (int i = 1; i <= 13; i++) {
             assertThat(cards.contains(new Card(i, CardType.DIAMOND))).isEqualTo(true);
