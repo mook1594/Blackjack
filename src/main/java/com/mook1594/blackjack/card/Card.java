@@ -26,6 +26,9 @@ public class Card {
         if (number == 12) {
             return "Q";
         }
+        if (number == 13) {
+            return "K";
+        }
         return Integer.toString(number);
     }
 }
