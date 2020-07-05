@@ -26,4 +26,8 @@ public class CardDeck {
             cards.add(new Card(i, CardType.HEART));
         }
     }
+
+    public void shuffle() {
+
+    }
 }

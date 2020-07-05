@@ -34,4 +34,19 @@ public class CardDeckTest {
         }
     }
 
+    @Test
+    @DisplayName("카드를 섞는다.")
+    public void getCard() {
+        CardDeck deck = new CardDeck();
+        deck.makeCard();
+        List<Card> cards = deck.getCards();
+
+        Card card = cards.get(0);
+        deck.shuffle();
+        Card card1 = cards.get(0);
+
+        assertThat(card.equals(card1)).isEqualTo(false);
+
+    }
+
 }
