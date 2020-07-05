@@ -68,7 +68,7 @@ public class CardDeckTest {
         Card card = deck.getCard();
 
         assertThat(card).isNotEqualTo(null);
-        assertThat(deck.getCards().size()).isNotEqualTo(51);
+        assertThat(deck.getCards().size()).isEqualTo(51);
     }
 
     @Test

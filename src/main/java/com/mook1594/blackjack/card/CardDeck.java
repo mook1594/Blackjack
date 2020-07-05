@@ -16,7 +16,9 @@ public class CardDeck {
     }
 
     public Card getCard(){
-        return null;
+        Card card = cards.get(0);
+        cards.remove(0);
+        return card;
     }
 
     public void makeCard() {
