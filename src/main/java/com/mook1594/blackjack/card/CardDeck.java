@@ -1,6 +1,7 @@
 package com.mook1594.blackjack.card;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CardDeck {
@@ -28,6 +29,6 @@ public class CardDeck {
     }
 
     public void shuffle() {
-
+        Collections.shuffle(cards);
     }
 }

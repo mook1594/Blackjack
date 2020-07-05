@@ -44,9 +44,18 @@ public class CardDeckTest {
         Card card = cards.get(0);
         deck.shuffle();
         Card card1 = cards.get(0);
-
         assertThat(card.equals(card1)).isEqualTo(false);
+        System.out.println(card1);
 
+        deck.shuffle();
+        card1 = cards.get(0);
+        assertThat(card.equals(card1)).isEqualTo(false);
+        System.out.println(card1);
+
+        deck.shuffle();
+        card1 = cards.get(0);
+        assertThat(card.equals(card1)).isEqualTo(false);
+        System.out.println(card1);
     }
 
 }
