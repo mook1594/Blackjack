@@ -3,6 +3,7 @@ package com.mook1594.blackjack.card;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class CardDeck {
     private List<Card> cards;
@@ -16,6 +17,9 @@ public class CardDeck {
     }
 
     public Card getCard(){
+        if (cards.size() == 0) {
+            throw new NoSuchElementException("카드가 없습니다.");
+        }
         Card card = cards.get(0);
         cards.remove(0);
         return card;
