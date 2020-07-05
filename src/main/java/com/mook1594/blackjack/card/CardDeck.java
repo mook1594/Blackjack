@@ -8,4 +8,8 @@ public class CardDeck {
     public Card getCard(){
         return null;
     }
+
+    public List<Card> makeCard() {
+        return null;
+    }
 }
