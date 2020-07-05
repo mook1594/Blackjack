@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CardTest {
 
@@ -51,5 +52,21 @@ public class CardTest {
 
         assertThat(card.getPattern()).isEqualTo(CardType.DIAMOND);
         assertThat(card.getDenomination()).isEqualTo("K");
+    }
+
+    @Test
+    @DisplayName("예외: 없는 카드 숫자")
+    public void makeCard6() {
+        assertThatThrownBy(() -> {
+            Card card = new Card(-1, CardType.DIAMOND);
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("예외: 없는 카드 모양")
+    public void makeCard7() {
+        assertThatThrownBy(() -> {
+            Card card = new Card(13, null);
+        }).isInstanceOf(IllegalArgumentException.class);
     }
 }
