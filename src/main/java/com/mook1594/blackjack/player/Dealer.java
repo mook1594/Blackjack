@@ -5,6 +5,7 @@ import com.mook1594.blackjack.card.CardDeck;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Dealer {
 
@@ -29,6 +30,9 @@ public class Dealer {
     }
 
     public Card giveCard() {
+        if (cardDeck == null) {
+            throw new NoSuchElementException("딜러가 가진 카드가 없습니다.");
+        }
         return cardDeck.getCard();
     }
 }

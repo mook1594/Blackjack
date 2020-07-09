@@ -6,7 +6,10 @@ import com.mook1594.blackjack.card.CardType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class DealerTest {
 
@@ -34,4 +37,13 @@ public class DealerTest {
         assertThat(card).isNotEqualTo(null);
     }
 
+    @Test
+    @DisplayName("딜러가 카드를 가지고 있지 않을때")
+    public void giveCard1() {
+        Dealer dealer = new Dealer();
+
+        assertThatThrownBy(() -> {
+            Card card = dealer.giveCard();
+        }).isInstanceOf(NoSuchElementException.class);
+    }
 }
