@@ -6,14 +6,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class CardDeck {
-    private List<Card> cards;
+    protected List<Card> cards;
 
     public CardDeck() {
         cards = new ArrayList<>();
-    }
-
-    public List<Card> getCards() {
-        return cards;
     }
 
     public Card getCard(){
@@ -36,5 +32,9 @@ public class CardDeck {
 
     public void shuffle() {
         Collections.shuffle(cards);
+    }
+
+    public int getCardCount() {
+        return cards.size();
     }
 }

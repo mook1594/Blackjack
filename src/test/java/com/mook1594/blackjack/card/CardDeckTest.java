@@ -16,32 +16,30 @@ public class CardDeckTest {
     public void createCardDeck() {
         CardDeck deck = new CardDeck();
         deck.makeCard();
-        List<Card> cards = deck.getCards();
 
-        assertThat(cards.size()).isEqualTo(52);
+        assertThat(deck.getCardCount()).isEqualTo(52);
     }
 
     @Test
     @DisplayName("카드 검증")
     public void createCardDeck1() {
-        CardDeck deck = new CardDeck();
+        MockCardDeck deck = new MockCardDeck();
         deck.makeCard();
-        List<Card> cards = deck.getCards();
 
         for (int i = 1; i <= 13; i++) {
-            assertThat(cards.contains(new Card(i, CardType.DIAMOND))).isEqualTo(true);
-            assertThat(cards.contains(new Card(i, CardType.HEART))).isEqualTo(true);
-            assertThat(cards.contains(new Card(i, CardType.CLUB))).isEqualTo(true);
-            assertThat(cards.contains(new Card(i, CardType.SPADE))).isEqualTo(true);
+            assertThat(deck.contains(new Card(i, CardType.DIAMOND))).isEqualTo(true);
+            assertThat(deck.contains(new Card(i, CardType.HEART))).isEqualTo(true);
+            assertThat(deck.contains(new Card(i, CardType.CLUB))).isEqualTo(true);
+            assertThat(deck.contains(new Card(i, CardType.SPADE))).isEqualTo(true);
         }
     }
 
     @Test
     @DisplayName("카드를 섞는다.")
     public void cardShuffle() {
-        CardDeck deck = new CardDeck();
+        MockCardDeck deck = new MockCardDeck();
         deck.makeCard();
-        List<Card> cards = deck.getCards();
+        List<Card> cards = deck.cardList();
 
         Card card = cards.get(0);
         deck.shuffle();
@@ -63,12 +61,12 @@ public class CardDeckTest {
     @Test
     @DisplayName("카드를 가져온다.")
     public void getCard() {
-        CardDeck deck = new CardDeck();
+        MockCardDeck deck = new MockCardDeck();
         deck.makeCard();
         Card card = deck.getCard();
 
         assertThat(card).isNotEqualTo(null);
-        assertThat(deck.getCards().size()).isEqualTo(51);
+        assertThat(deck.cardList().size()).isEqualTo(51);
     }
 
     @Test
