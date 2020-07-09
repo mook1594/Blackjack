@@ -18,14 +18,15 @@ public class Dealer {
     }
 
     public Dealer(CardDeck cardDeck) {
+        dealerCards = new ArrayList<>();
         this.cardDeck = cardDeck;
     }
 
-    public void takeCard(Card card) {
-        dealerCards.add(card);
+    public void takeCard() {
+        dealerCards.add(giveCard());
     }
 
-    public int getCardCount() {
+    public int cardCount() {
         return dealerCards.size();
     }
 
