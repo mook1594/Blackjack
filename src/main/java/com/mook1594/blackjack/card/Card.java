@@ -6,6 +6,7 @@ import lombok.Setter;
 import java.util.Objects;
 
 public class Card {
+    @Getter
     private int number;
 
     @Getter
